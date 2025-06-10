@@ -1,4 +1,4 @@
-
+import Container from 'react-bootstrap/Container';
 
 
 
@@ -8,8 +8,11 @@ export default function TaskManager()
 
 
     return(
-        <>
-        <h1>Task Manager</h1>
-        </>
+    <div className='d-flex justify-content-center align-items-center min-vh-100'>
+        <Container className=''>
+            <h1>Task Master</h1>
+        </Container>
+    </div>
+
     )
 }
