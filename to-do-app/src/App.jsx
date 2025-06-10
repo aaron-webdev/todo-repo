@@ -1,12 +1,16 @@
-import TaskManager from "./components/TaskManager";
+import { HashRouter, Route, Routes } from "react-router-dom"
+import HomePage from "./pages/HomePage"
 
 
 export default function App() {
 
   return (
     <>
-      <p>Application</p>
-      <TaskManager/>
+    <HashRouter>
+      <Routes>
+        <Route path="/" element={<HomePage/>}/>
+      </Routes>
+    </HashRouter>
     </>
   )
 }
