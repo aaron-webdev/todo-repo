@@ -4,7 +4,9 @@ import Col from 'react-bootstrap/Col';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import ListGroup from 'react-bootstrap/ListGroup';
-import React, { useState, useRef } from "react";
+import 'bootstrap-icons/font/bootstrap-icons.css';
+
+import { useState, useRef } from "react";
 
 
 
@@ -80,28 +82,30 @@ export default function TaskManager()
                 </Row>
                 
                 <Row>
-                    <Col id='filters' className='d-flex flex-column'>
+                    <Col id='filters' className='d-flex flex-column m-5'>
                         <h4>Filters</h4>
-                        <Button>Complete</Button>
-                        <Button>Incomplete</Button>
-                        <Button>All</Button>
+                       
+                        <Button className='m-1 w-50'onClick={() => setFilter("incomplete")}>Incomplete</Button>
+                        <Button className='m-1 w-50'onClick={() => setFilter("all")}>All</Button>
+                        <Button className='m-1 w-50'onClick={() => setFilter("completed")}>Complete</Button>
                         <br/>
-                        <Button variant='danger' onClick={clearAll}>Clear All</Button>
+                        <Button className='m-1 w-50'variant='danger' onClick={clearAll}>Clear All</Button>
                     </Col>
 
                     <Col>
-                        <ListGroup>
+                        <ListGroup className='m-3'>
                             {filteredTasks.map((task, index) => (
                                 <ListGroup.Item key={task.id}>
                                     <input
+                                        className='m-1'
                                         type='checkbox'
                                         checked={task.isComplete}
                                         onChange={() => toggleComplete(task.id)}
                                     />
-                                    <span style={{textDecoration: task.isComplete ? "line-through" : "none",}}>
+                                    <span className='fw-bold fs-3 m-5'style={{textDecoration: task.isComplete ? "line-through" : "none",}}>
                                         {task.text}
                                     </span>
-                                    <Button onClick={() => deleteTask(index)}>Delete</Button>
+                                    <Button variant='outline-danger' className='m-1' onClick={() => deleteTask(index)}><i className="bi bi-eraser"></i></Button>
                                 </ListGroup.Item>
                             ))}
                         </ListGroup>
@@ -114,21 +118,3 @@ export default function TaskManager()
 
     )
 }
-
-/*
-<ul>
-        {filteredTasks.map((task, index) => (
-            <li key={task.id} className='taskActual'>
-                <input
-                type='checkbox'
-                checked={task.isComplete}
-                onChange={() => toggleComplete(task.id)}
-                />
-                <span style={{textDecoration: task.isComplete ? "line-through" : "none",}}>
-                    {task.text}
-                </span>
-                <button className='deleteBtn taskBtn' onClick={() => deleteTask(index)}>Delete</button>
-            </li>
-        ))}
-</ul>
-*/
