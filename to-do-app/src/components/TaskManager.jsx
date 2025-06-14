@@ -75,23 +75,35 @@ export default function TaskManager()
                         </Form>
                     </Col>
                     <Col>
-                        <Button variant='secondary' onClick={addNewTask}>Add Task</Button>
+                        <Button onClick={addNewTask}>Add Task</Button>
                     </Col>
                 </Row>
                 
                 <Row>
                     <Col id='filters' className='d-flex flex-column'>
                         <h4>Filters</h4>
-                        <Button variant='success'>Complete</Button>
-                        <Button variant='warning'>Incomplete</Button>
-                        <Button variant='secondary'>All</Button>
+                        <Button>Complete</Button>
+                        <Button>Incomplete</Button>
+                        <Button>All</Button>
                         <br/>
                         <Button variant='danger' onClick={clearAll}>Clear All</Button>
                     </Col>
 
                     <Col>
                         <ListGroup>
-
+                            {filteredTasks.map((task, index) => (
+                                <ListGroup.Item key={task.id}>
+                                    <input
+                                        type='checkbox'
+                                        checked={task.isComplete}
+                                        onChange={() => toggleComplete(task.id)}
+                                    />
+                                    <span style={{textDecoration: task.isComplete ? "line-through" : "none",}}>
+                                        {task.text}
+                                    </span>
+                                    <Button onClick={() => deleteTask(index)}>Delete</Button>
+                                </ListGroup.Item>
+                            ))}
                         </ListGroup>
                     </Col>
                 </Row>
