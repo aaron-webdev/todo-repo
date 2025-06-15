@@ -85,11 +85,11 @@ export default function TaskManager()
                     <Col id='filters' className='d-flex flex-column m-5'>
                         <h4>Filters</h4>
                        
-                        <Button className='m-1 w-50'onClick={() => setFilter("incomplete")}>Incomplete</Button>
-                        <Button className='m-1 w-50'onClick={() => setFilter("all")}>All</Button>
-                        <Button className='m-1 w-50'onClick={() => setFilter("completed")}>Complete</Button>
+                        <Button className='my-1 mx-auto w-50 'onClick={() => setFilter("incomplete")}>Incomplete</Button>
+                        <Button className='my-1 mx-auto w-50'onClick={() => setFilter("all")}>All</Button>
+                        <Button className='my-1 mx-auto w-50'onClick={() => setFilter("completed")}>Complete</Button>
                         <br/>
-                        <Button className='m-1 w-50'variant='danger' onClick={clearAll}>Clear All</Button>
+                        <Button className='my-1 mx-auto w-50'variant='danger' onClick={clearAll}>Clear All</Button>
                     </Col>
 
                     <Col>
