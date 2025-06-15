@@ -6,7 +6,7 @@ import Form from 'react-bootstrap/Form';
 import ListGroup from 'react-bootstrap/ListGroup';
 import 'bootstrap-icons/font/bootstrap-icons.css';
 
-import { useState, useRef } from "react";
+import React, { useState, useRef } from "react";
 
 
 
@@ -58,11 +58,11 @@ export default function TaskManager()
 
     return(
     <>
-        <Container className='text-center'>
+        <Container className='text-center border border-5 rounded-4 m-5'>
             <h1>Task Master</h1>
             <div id='interactiveSection'>
-                <Row>
-                    <Col>
+                <Row className='d-flex text-center m-5'>
+                    <Col className='mx-auto'>
                         <Form>
                             <Form.Control 
                                 type='text'                        
@@ -82,7 +82,7 @@ export default function TaskManager()
                 </Row>
                 
                 <Row>
-                    <Col id='filters' className='d-flex flex-column m-5'>
+                    <Col id='filters' className='d-flex flex-column border border-3 rounded-3 m-5'>
                         <h4>Filters</h4>
                        
                         <Button className='my-1 mx-auto w-50 'onClick={() => setFilter("incomplete")}>Incomplete</Button>
@@ -118,3 +118,7 @@ export default function TaskManager()
 
     )
 }
+
+/*
+style={{border-style: solid; border-width: 5px; border-radius: 5px}}
+*/
