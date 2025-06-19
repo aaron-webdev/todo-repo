@@ -57,7 +57,7 @@ export default function TaskManager()
     return(
     <>
         <Container className='text-center border border-5 rounded-4 m-5'>
-            <h1>Task Master</h1>
+            <h1>Task Master General</h1>
             <div id='interactiveSection'>
                 <div className='m-1'>
                     <Form>
