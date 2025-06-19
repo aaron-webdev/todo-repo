@@ -73,7 +73,7 @@ export default function TaskManager()
                         />
                     </Form>
                     <br/>
-                    <Button className='mx-auto' onClick={addNewTask}>Add Task</Button>
+                    <Button className='mx-auto px-5' onClick={addNewTask}>Add Task</Button>
                 </div>
                 <div id='filters' className='border border-2 rounded-3 my-5 mx-1'>
                     <h4>Filters</h4>
@@ -99,7 +99,7 @@ export default function TaskManager()
                         ))}
                     </ListGroup>
                     <br/>
-                    <Button className='my-1 mx-auto'variant='danger' onClick={clearAll}>Clear All</Button>
+                    <Button className='my-1 mx-auto px-5'variant='danger' onClick={clearAll}>Clear All</Button>
                 </div>
             </div>
         </Container>
