@@ -1,5 +1,6 @@
 {
   "name": "to-do-app",
+  "homepage": "https://aaron-webdev.github.io/todo-repo",
   "private": true,
   "version": "0.0.0",
   "type": "module",
